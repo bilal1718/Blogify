@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+body {
+    margin-left: 20px; /* Adjust the left margin as needed */
+    margin-right: 20px; /* Adjust the right margin as needed */
+  }
+/* styles.css */
+.container {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+/* styles.css */
+.card .MuiCardContent-root {
+    padding: 16px; /* Add padding to the card content */
+  }
+  
+  .card .MuiTypography-root {
+    margin-bottom: 8px; /* Add margin between title and button */
+  }
+/* styles.css */
+.card {
+    max-width: 300px; /* Adjust the width as needed */
+  }
+        

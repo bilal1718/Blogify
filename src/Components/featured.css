@@ -1,0 +1,6 @@
+.card-container {
+    display: flex;
+    overflow: hidden;
+    transition:linear;
+    align-items: "center"
+  }
