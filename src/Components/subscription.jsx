@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { Alert } from "@mui/material";
 
 export default function Subscription() {
     const [showMessage,setShowMessgae]=useState(false)
   return (
-    <div style={{ backgroundColor: "#E5F1ED", margin: "30px 0", padding: "20px" }}>
+    <div style={{ backgroundColor: "#63C5DA", margin: "30px 0", padding: "20px" }}>
       <Typography variant="h2" align="center" style={{ color: "#000", fontWeight: "bolder", marginBottom: "20px" }}>
         Subscribe to Our Newsletter
       </Typography>
@@ -27,9 +28,7 @@ export default function Subscription() {
         </Button>
       </div>
       {showMessage && (
-            <div className="flex justify-center items-center mt-4">
-            <p className="bg-green-500 text-white font-bold p-3">Thanks for subscribing!</p>
-      </div>
+            <Alert severity="success">Thanks for subscribing!</Alert>
 )}
     </div>
   );

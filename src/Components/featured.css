@@ -4,3 +4,35 @@
     transition:linear;
     align-items: "center"
   }
+  .body{
+    background-color:#63C5DA;
+    margin-top:2rem;
+    margin-bottom: 5rem;
+    padding-bottom:3rem;
+    padding-top: 4rem;
+  }
+  .heading{
+    font-size: 3rem;
+    font-weight: 600;
+    color:black;
+    position: relative;
+  }
+  .heading::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background: black;
+    bottom: -10px;
+    left: 30%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+   .heading:hover::before {
+    transform: scaleX(0.8); /* Show the line on hover */
+  }
+  /* Reset line on mouse out */
+  .heading:not(:hover)::before {
+    transform: scaleX(0);
+  }

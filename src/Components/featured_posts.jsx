@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -28,7 +28,8 @@ export default function FeaturedPosts() {
   const visibleCards = data.slice(currentIndex, currentIndex + cardsPerPage);
 
   return (
-    <div>
+    <div className="body">
+      <h1 className="heading">TOP FEATURED POSTS</h1>
       <div className="card-container">
         <IconButton onClick={handlePrev} disabled={currentIndex === 0}>
           <KeyboardArrowLeft style={{fontSize:"4rem"}} />
@@ -36,14 +37,14 @@ export default function FeaturedPosts() {
         <Grid container spacing={4} style={{ margin: "2px" }}>
           {visibleCards.map((card, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>
-              <Card>
+              <Card style={{color:"#000000"}}>
                 <CardMedia component="img" alt="Image" height="150" image={card.urlToImage} />
                 <CardContent>
                   <Typography variant="h5" component="div">
                     {card.title}
                   </Typography>
-                  <Link color="secondary" href={card.url}>
-                    Learn More
+                  <Link to={card.url} style={{textDecoration:"none",fontSize:"1.2rem",color:"blue"}}>
+                    Learn More <span style={{fontSize:'24px'}}>&#8594;</span>
                   </Link>
                 </CardContent>
               </Card>
