@@ -8,9 +8,11 @@ import FeaturedPosts from "./Components/featured_posts"
 import Subscription from "./Components/subscription";
 import Faqs from "./Components/faqs";
 import Categories from "./Components/Categories";
+import DataProvider from "./Components/DataContext";
 
 export default function App(){
   return(
+    <DataProvider>
     <div>
       <Header />
        <Hero />
@@ -22,5 +24,6 @@ export default function App(){
        {/* <About /> */}
       <Footer />
     </div>
+    </DataProvider>
   );
 }

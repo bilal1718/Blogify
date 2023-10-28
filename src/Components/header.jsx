@@ -141,12 +141,12 @@ export default function Header() {
             open={open}
             onClose={handleMenuClose}
           >
-            <MenuItem component={Link} to="/category/business" onClick={() => handleCategoryClick('Business')}>Business</MenuItem>
-            <MenuItem component={Link} to="/category/entertainment" onClick={() => handleCategoryClick('Entertainment')}>Entertainment</MenuItem>
-            <MenuItem component={Link} to="/category/health" onClick={() => handleCategoryClick('Health')}>Health</MenuItem>
-            <MenuItem component={Link} to="/category/science" onClick={() => handleCategoryClick('Science')}>Science</MenuItem>
-            <MenuItem component={Link} to="/category/sports" onClick={() => handleCategoryClick('Sports')}>Sports</MenuItem>
-            <MenuItem component={Link} to="/category/technology" onClick={() => handleCategoryClick('Technology')}>Technology</MenuItem>
+            <MenuItem component={Link} to="/category/business" onClick={() => handleCategoryClick('business')}>Business</MenuItem>
+            <MenuItem component={Link} to="/category/entertainment" onClick={() => handleCategoryClick('entertainment')}>Entertainment</MenuItem>
+            <MenuItem component={Link} to="/category/health" onClick={() => handleCategoryClick('health')}>Health</MenuItem>
+            <MenuItem component={Link} to="/category/science" onClick={() => handleCategoryClick('science')}>Science</MenuItem>
+            <MenuItem component={Link} to="/category/sports" onClick={() => handleCategoryClick('sports')}>Sports</MenuItem>
+            <MenuItem component={Link} to="/category/technology" onClick={() => handleCategoryClick('technology')}>Technology</MenuItem>
           </Menu>
           <Search>
             <SearchIconWrapper>

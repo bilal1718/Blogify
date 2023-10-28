@@ -1,0 +1,32 @@
+.body{
+    background-color: teal;
+     margin-top: 2rem;
+     margin-bottom: 5rem;
+     padding-top:2rem;
+     padding-bottom:1rem;
+}
+.heading{
+   font-size: 3rem;
+   font-weight: 600;
+   color:white;
+   position: relative;
+ }
+ .heading::before {
+   content: "";
+   position: absolute;
+   width: 40%;
+   height: 5px;
+   background: black;
+   bottom: -10px;
+   left: 30%;
+   transform: scaleX(0);
+   transform-origin: center;
+   transition: transform 0.3s ease-in-out;
+ }
+  .heading:hover::before {
+   transform: scaleX(0.8); /* Show the line on hover */
+ }
+ /* Reset line on mouse out */
+ .heading:not(:hover)::before {
+   transform: scaleX(0);
+ }

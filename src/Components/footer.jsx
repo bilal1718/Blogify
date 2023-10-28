@@ -3,25 +3,33 @@ import { AppBar, Toolbar, Typography, Container, Link as MUILink, Box } from '@m
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import InfoIcon from "@mui/icons-material/Info";
+import EmailIcon from "@mui/icons-material/Email";
+import ChatIcon from "@mui/icons-material/Chat";
 function Footer() {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#3f51b5', marginTop: 'auto' }}>
+    <div>
+    <AppBar position="static" sx={{
+    fontSize:"1.6rem",
+    backgroundColor: '#3f51b5',
+    marginTop: '0',
+    padding:"2rem 0" }}>
       <Container maxWidth="md">
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography variant="body1" sx={{ color: 'white' }}>
+        <Typography variant="body1" sx={{ color: 'white',fontSize:"1.3rem" }}>
             &copy; {new Date().getFullYear()} Blogify&nbsp;
             Terms&nbsp; Privacy&nbsp;
           </Typography>
           <Box>
-            <Typography variant="h6" sx={{ color: 'white' }}>
+            <Typography variant="h5" sx={{ color: 'white' }}>
               Important Links
             </Typography>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding:"5px" }}>
               <li>
                 <MUILink
                   href="/category/business"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -32,6 +40,7 @@ function Footer() {
                 <MUILink
                   href="/category/entertainment"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -42,6 +51,7 @@ function Footer() {
                 <MUILink
                   href="/category/health"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -52,6 +62,7 @@ function Footer() {
                 <MUILink
                   href="/category/science"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -62,6 +73,7 @@ function Footer() {
                 <MUILink
                   href="/category/sports"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -72,6 +84,7 @@ function Footer() {
                 <MUILink
                   href="/category/technology"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -81,51 +94,55 @@ function Footer() {
             </ul>
           </Box>
           <Box>
-            <Typography variant="h6" sx={{ color: 'white' }}>
+            <Typography variant="h5" sx={{ color: 'white' }}>
               Company
             </Typography>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: "5px" }}>
               <li>
                 <MUILink
                   href=""
+                  target="_blank"
                   color="inherit"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
-                  About
+                   <InfoIcon sx={{ marginRight: '8px' }} /> About
                 </MUILink>
               </li>
               <li>
                 <MUILink
                   href=""
+                  target="_blank"
                   color="inherit"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
-                  Contact
+                   <EmailIcon sx={{ marginRight: '8px' }} /> Contact
                 </MUILink>
               </li>
               <li>
                 <MUILink
-                  href=""
+                  href="/category/blog"
+                  target="_blank"
                   color="inherit"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
-                  Blog
+                  <ChatIcon sx={{marginRight:"8px"}}/>Blog
                 </MUILink>
               </li>
             </ul>
           </Box>
           <Box>
-            <Typography variant="h6" sx={{ color: 'white' }}>
+            <Typography variant="h5" sx={{ color: 'white' }}>
               Social Links
             </Typography>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: "5px" }}>
               <li>
                 <MUILink
-                  href=""
+                  href="https://www.linkedin.com/in/muhammad-bilal-61bb43266/"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -134,8 +151,9 @@ function Footer() {
               </li>
               <li>
                 <MUILink
-                  href=""
+                  href="https://twitter.com/BilalCodes649"
                   color="inherit"
+                  target="_blank"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
                 >
@@ -144,7 +162,8 @@ function Footer() {
               </li>
               <li>
                 <MUILink
-                  href=""
+                  href="https://github.com/bilal1718"
+                  target="_blank"
                   color="inherit"
                   variant="body1"
                   sx={{ color: 'white',textDecoration: 'none' }}
@@ -158,6 +177,7 @@ function Footer() {
         </Toolbar>
       </Container>
     </AppBar>
+    </div>
   );
 }
 

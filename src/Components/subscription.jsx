@@ -8,7 +8,7 @@ export default function Subscription() {
     const [showMessage,setShowMessgae]=useState(false)
   return (
     <div style={{ backgroundColor: "#63C5DA", margin: "30px 0", padding: "20px" }}>
-      <Typography variant="h2" align="center" style={{ color: "#000", fontWeight: "bolder", marginBottom: "20px" }}>
+      <Typography variant="h1" align="center" style={{ fontSize:"3rem",color: "#D9F7FF", fontWeight: "bolder", marginBottom: "20px" }}>
         Subscribe to Our Newsletter
       </Typography>
       <div style={{ display: "flex", flexDirection:"row", alignItems: "center",justifyContent: "center" }}>

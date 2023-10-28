@@ -42,7 +42,7 @@ export default function Categories() {
                   <Typography variant="h5" component="div">
                     {card.title}
                   </Typography>
-                  <Link to={`/category/${card.title}`} style={{textDecoration:"none",fontSize:"1.2rem",color:"blue"}}>
+                  <Link to={`/category/${card.title.toLowerCase()}`} style={{textDecoration:"none",fontSize:"1.2rem",color:"blue"}}>
                     Explore <span style={{fontSize:'24px'}}>&#8594;</span>
                   </Link>
                 </CardContent>

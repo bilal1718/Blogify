@@ -1,35 +1,41 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDataContext } from './DataContext';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Header from "./header";
 import "../App.css";
-import { Link } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Footer from './footer';
+import { Link } from "react-router-dom";
+import Grid from "@mui/material/Grid";
 
 const Cardi = ({category}) => {
   const { data, setSelectedCategory } = useDataContext();
-  const { category:selectedCategory } = useParams();
+  const { selectedCategory } = useParams(); // Change 'category' to 'selectedCategory'
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
+
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+
   useEffect(() => {
-    setSelectedCategory(selectedCategory || category);
-  }, [selectedCategory, category, setSelectedCategory]);
-  
-const newsWithImages = data.filter((post) => post.urlToImage);
-  const totalPages = Math.ceil(newsWithImages.length / itemsPerPage);
+    setSelectedCategory(selectedCategory); // Update the selected category
+  }, [selectedCategory, setSelectedCategory]);
+
+  const newsWithImages = data.filter((post) => post.urlToImage);
+  const filteredData = selectedCategory ? newsWithImages.filter((post) => post.category === selectedCategory) : newsWithImages;
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentData = newsWithImages.slice(startIndex, endIndex);
-    const rows = Math.ceil(currentData.length / 3);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = filteredData.slice(startIndex, endIndex);
+  const rows = Math.ceil(currentData.length / 3);
+
   const renderPageNumbers = () => {
     return (
       <div className="flex space-x-2 mx-4 my-4">
@@ -45,48 +51,47 @@ const newsWithImages = data.filter((post) => post.urlToImage);
       </div>
     );
   };
-    const renderRows = () => {
-      const cardRows = [];
-      for (let i = 0; i < rows; i++) {
-        const startIndex = i * 3;
-        const endIndex = startIndex + 3;
-        const rowCards = newsWithImages.slice(startIndex, endIndex);
-        cardRows.push(
-          <div key={i} className="flex justify-center space-x-4 mb-4">
-            {rowCards.map((post, index) => (
+
+  const renderRows = () => {
+    const cardRows = [];
+    for (let i = 0; i < rows; i++) {
+      const startIndex = i * 3;
+      const endIndex = startIndex + 3;
+      const rowCards = currentData.slice(startIndex, endIndex);
+      cardRows.push(
+        <Grid key={i} container spacing={4} style={{ margin: "2px" }}>
+          {rowCards.map((card, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4}>
               <Card key={index}>
-                <CardMedia
-                  component="img"
-                  alt="Image"
-                  height="150"
-                  image={post.urlToImage} // Use post-specific image URL
-                />
+                <CardMedia component="img" alt="Image" height="150" image={card.urlToImage} />
                 <CardContent>
                   <Typography variant="h5" component="div">
-                    {post.title}
+                    {card.title}
                   </Typography>
-                  <Link color="secondary" href={post.url}>
-                    Learn More
+                  <Link to={card.url} target='_blank' style={{ textDecoration: "none", fontSize: "1.2rem", color: "blue" }}>
+                    Explore <span style={{ fontSize: '24px' }}>&#8594;</span>
                   </Link>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        );
-      }
-      return cardRows;
-    };
+            </Grid>
+          ))}
+        </Grid>
+      );
+    }
+    return cardRows;
+  };
+
   return (
     <div>
-    <Header />
-    <div className="container">
-      <div>{renderRows()}</div>
+      <Header />
+      <div className="container">
+        <div>{renderRows()}</div>
+      </div>
+      <div className="flex justify-center mt-4">
+        {renderPageNumbers()}
+      </div>
+      <Footer />
     </div>
-    <div className="flex justify-center mt-4">
-      {renderPageNumbers()}
-    </div>
-    <Footer />
-  </div>
   );
 };
 

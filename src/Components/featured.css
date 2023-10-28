@@ -4,23 +4,23 @@
     transition:linear;
     align-items: "center"
   }
-  .body{
+  .posts{
     background-color:#63C5DA;
     margin-top:2rem;
     margin-bottom: 5rem;
     padding-bottom:3rem;
     padding-top: 4rem;
   }
-  .heading{
+  .newtitle{
     font-size: 3rem;
     font-weight: 600;
-    color:black;
+    color:#F7FFFF;
     position: relative;
   }
-  .heading::before {
+  .newtitle::before {
     content: "";
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 5px;
     background: black;
     bottom: -10px;
@@ -29,10 +29,10 @@
     transform-origin: center;
     transition: transform 0.3s ease-in-out;
   }
-   .heading:hover::before {
+   .newtitle:hover::before {
     transform: scaleX(0.8); /* Show the line on hover */
   }
   /* Reset line on mouse out */
-  .heading:not(:hover)::before {
+  .newtitle:not(:hover)::before {
     transform: scaleX(0);
   }

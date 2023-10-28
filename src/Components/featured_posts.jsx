@@ -28,8 +28,8 @@ export default function FeaturedPosts() {
   const visibleCards = data.slice(currentIndex, currentIndex + cardsPerPage);
 
   return (
-    <div className="body">
-      <h1 className="heading">TOP FEATURED POSTS</h1>
+    <div className="posts">
+      <h1 className="newtitle">TOP FEATURED POSTS</h1>
       <div className="card-container">
         <IconButton onClick={handlePrev} disabled={currentIndex === 0}>
           <KeyboardArrowLeft style={{fontSize:"4rem"}} />
