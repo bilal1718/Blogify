@@ -27,11 +27,10 @@ export default function Hero(){
               color="text.inherit"
               gutterBottom
             >
-             The Goal is to create writing easy and fast.
+             The Goal is to obtain knowledge easy and fast.
             </Typography>
             <Typography variant="h5" align="center" color="text.inherit" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc.
+              Something short and leading about the collection.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
