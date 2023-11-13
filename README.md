@@ -1,12 +1,48 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
 # Blogify
->>>>>>> 2687a99e64b8574fb73edecfd2d28c421c1cdd8a
+
+Blogify is a React application that uses Material-UI to provide a user-friendly interface for exploring news articles from various categories using the News API.
+
+## Features
+
+- Explore top news articles from different categories like Business, Entertainment, Health, Science, Sports, and Technology.
+- View top featured news articles on the homepage.
+- Click on a category to see news specifically from that category.
+
+## Demo
+
+Check out the live demo [here](#) (replace with your deployment link).
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/blogify.git
+   ```
+2. Change Directory:
+  ```bash
+  cd blogify
+  ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+ 4. Start the server:
+   ```bash
+  npm start
+   ```
+
+5. Open your browser and visit http://localhost:3000 to see Blogify in action.
+
+## Usage
+
+-Click on the different tabs in the navigation bar to explore news from specific categories.
+<br>
+-The "Home" tab displays top featured news articles.
+
+## Contributing
+
+Contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License.
