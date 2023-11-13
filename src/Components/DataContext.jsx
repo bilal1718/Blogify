@@ -8,7 +8,7 @@ export const useDataContext = () => useContext(DataContext);
 const DataProvider = ({ children }) => {
   const apiKey = '1531a0331d9c475283986f3815e4f326';
   const [data, setData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('blog');
 
   // Function to fetch top posts
   const fetchTopPosts = () => {

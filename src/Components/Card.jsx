@@ -22,7 +22,7 @@ const Cardi = ({category}) => {
   };
 
   useEffect(() => {
-    setSelectedCategory(selectedCategory); // Update the selected category
+    setSelectedCategory(category); // Update the selected category
   }, [selectedCategory, setSelectedCategory]);
 
   const newsWithImages = data.filter((post) => post.urlToImage);

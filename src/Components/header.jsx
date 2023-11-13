@@ -57,7 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-const CustomTab = styled(Tab)(({ theme }) => ({
+const CustomTab = styled(Tab)(() => ({
   '&.Mui-selected': {
     fontWeight: 'bold', // Make the active tab bold
   },
@@ -71,7 +71,7 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
 
 export default function Header() {
   const [value, setValue] = React.useState('home');
-  const { data,setDataCategory } = useDataContext();
+  const { data,setSelectedCategory } = useDataContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -90,7 +90,7 @@ export default function Header() {
   };
   const handleCategoryClick = (category) => {
     const lowercaseCategory = category.toLowerCase();
-    setDataCategory(lowercaseCategory);
+    setSelectedCategory(lowercaseCategory);
     handleMenuClose();
     navigate(`/category/${lowercaseCategory}`);
   };
@@ -157,9 +157,10 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Button variant="contained" style={{marginLeft:"8px",fontWeight:"bold",background:"white",color:"black"}} href="#contained-buttons">
+      <Link to="/sign-up"><Button variant="contained" style={{marginLeft:"8px",fontWeight:"bold",background:"white",color:"black"}}>
         Log In
       </Button>
+      </Link>
         </Toolbar>
       </AppBar>
     </Box>
