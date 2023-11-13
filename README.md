@@ -8,10 +8,6 @@ Blogify is a React application that uses Material-UI to provide a user-friendly 
 - View top featured news articles on the homepage.
 - Click on a category to see news specifically from that category.
 
-## Demo
-
-Check out the live demo [here](#) (replace with your deployment link).
-
 ## Installation
 
 1. Clone the repository:
